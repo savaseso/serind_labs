@@ -13,7 +13,9 @@ const List = () => {
   useEffect(() => {
     //populate search result values
     const searchRes = localStorage.getItem("searchResult");
-    setSearchResult(JSON.parse(searchRes));
+    if(searchRes){
+        setSearchResult(JSON.parse(searchRes));
+    }
   }, []);
 
   const getMovies = async (e, state) => {
